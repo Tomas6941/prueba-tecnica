@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nórdika</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <nav class="navbar">
+    <span class="logo">Nórdika</span>
+    <ul class="nav-links">
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#productos">Catálogo</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+    <a href="#productos" class="btn">Ver catálogo</a>
+    <button class="hamburger" onclick="document.getElementById('mobile-menu').classList.toggle('open')">☰</button>
+  </nav>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#inicio">Inicio</a>
+    <a href="#productos">Catálogo</a>
+    <a href="#contacto">Contacto</a>
+  </div>
+</header>
+
+<section class="hero" id="inicio">
+  <div class="hero-text">
+    <h1>Diseño nórdico para tu hogar</h1>
+    <p>Muebles de calidad que combinan funcionalidad, estética y durabilidad. Transformá tu espacio con la simplicidad escandinava.</p>
+    <div class="hero-buttons">
+      <a href="#productos" class="btn">Ver catálogo</a>
+      <a href="#nosotros" class="btn btn-secondary">Conocé más</a>
+    </div>
+  </div>
+  <div class="hero-image">
+    <p>Imagen del producto</p>
+  </div>
+</section>
+
+<section class="products" id="productos">
+  <h2>Productos destacados</h2>
+  <p class="section-subtitle">Los favoritos de nuestra colección</p>
+  <div class="products-grid">
+
+    <div class="card">
+      <div class="card-image">Imagen</div>
+      <div class="card-body">
+        <h3>Sillón Fjord</h3>
+        <p>Tapizado en tela beige, estructura en roble macizo.</p>
+        <span class="price">$89.990</span>
+        <a href="#contacto" class="btn btn-full">Agregar al carrito</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-image">Imagen</div>
+      <div class="card-body">
+        <h3>Mesa Lund</h3>
+        <p>Mesa de comedor en madera de pino, 160 × 80 cm.</p>
+        <span class="price">$124.990</span>
+        <a href="#contacto" class="btn btn-full">Agregar al carrito</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-image">Imagen</div>
+      <div class="card-body">
+        <h3>Cama Birk</h3>
+        <p>Cama matrimonial con cabecero minimalista en fresno.</p>
+        <span class="price">$219.990</span>
+        <a href="#contacto" class="btn btn-full">Agregar al carrito</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer id="contacto">
+  <span class="logo">Nórdika</span>
+  <ul class="footer-links">
+    <li><a href="#inicio">Inicio</a></li>
+    <li><a href="#productos">Catálogo</a></li>
+    <li><a href="#nosotros">Nosotros</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+  <p>© 2026 Nórdika. Todos los derechos reservados.</p>
+</footer>
+
+</body>
+</html>
