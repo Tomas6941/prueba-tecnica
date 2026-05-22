@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalle de producto — Nórdika</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            nordika: {
+              bg:     '#faf9f7',
+              card:   '#ede9e3',
+              dark:   '#1a1a1a',
+              muted:  '#666666',
+              border: '#e5e5e5',
+            }
+          },
+          fontFamily: {
+            serif: ['Georgia', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-nordika-bg font-serif text-nordika-dark min-h-screen">
+
+  <header class="bg-white border-b border-nordika-border sticky top-0 z-50">
+    <nav class="flex items-center justify-between px-10 py-4 max-w-6xl mx-auto">
+      <a href="index.html" class="text-xl font-bold tracking-tight">Nórdika</a>
+      <ul class="hidden md:flex gap-7 text-sm text-nordika-muted list-none">
+        <li><a href="index.html#inicio" class="hover:text-nordika-dark transition-colors">Inicio</a></li>
+        <li><a href="index.html#productos" class="hover:text-nordika-dark transition-colors">Catálogo</a></li>
+        <li><a href="index.html#contacto" class="hover:text-nordika-dark transition-colors">Contacto</a></li>
+      </ul>
+      <a href="index.html#productos"
+         class="text-sm bg-nordika-dark text-white px-5 py-2.5 rounded-md shadow hover:bg-neutral-700 transition-colors">
+        Ver catálogo
+      </a>
+    </nav>
+  </header>
+
+  <div class="max-w-5xl mx-auto px-6 pt-8 text-sm text-nordika-muted">
+    <a href="index.html" class="hover:text-nordika-dark transition-colors">Inicio</a>
+    <span class="mx-2">/</span>
+    <a href="index.html#productos" class="hover:text-nordika-dark transition-colors">Catálogo</a>
+    <span class="mx-2">/</span>
+    <span id="breadcrumb-name" class="text-nordika-dark font-medium"></span>
+  </div>
+
+  <main class="max-w-5xl mx-auto px-6 py-10">
+    <div id="product-content" class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+
+      <div class="bg-nordika-card rounded-2xl flex items-center justify-center h-80 md:h-96 text-nordika-muted text-sm">
+        Imagen del producto
+      </div>
+
+      <!-- Info -->
+      <div class="flex flex-col gap-5">
+        <div>
+          <span id="product-category"
+                class="text-xs uppercase tracking-widest text-nordika-muted font-semibold"></span>
+          <h1 id="product-name" class="text-4xl font-bold mt-1 leading-tight"></h1>
+        </div>
+
+        <p id="product-description" class="text-nordika-muted text-base leading-relaxed"></p>
+
+        <span id="product-price" class="text-3xl font-bold"></span>
+
+        <div class="border-t border-nordika-border pt-5">
+          <h2 class="text-sm font-semibold uppercase tracking-widest text-nordika-muted mb-3">Características</h2>
+          <ul id="product-features" class="space-y-2 text-sm text-nordika-dark"></ul>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-3 mt-2">
+          <a href="index.html#contacto"
+             class="flex-1 text-center bg-nordika-dark text-white py-3 px-6 rounded-md text-sm font-medium shadow hover:bg-neutral-700 transition-colors">
+            Agregar al carrito
+          </a>
+          <a href="index.html#productos"
+             class="flex-1 text-center border border-nordika-dark text-nordika-dark py-3 px-6 rounded-md text-sm font-medium hover:bg-nordika-dark hover:text-white transition-colors">
+            Volver al catálogo
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div id="not-found" class="hidden text-center py-24">
+      <p class="text-4xl mb-4">🪑</p>
+      <h2 class="text-2xl font-bold mb-2">Producto no encontrado</h2>
+      <p class="text-nordika-muted mb-6">El producto que buscás no existe en nuestro catálogo.</p>
+      <a href="index.html#productos"
+         class="inline-block bg-nordika-dark text-white px-6 py-3 rounded-md text-sm hover:bg-neutral-700 transition-colors">
+        Ver todos los productos
+      </a>
+    </div>
+  </main>
+
+  <footer class="bg-white border-t border-nordika-border mt-16 px-10 py-7 flex flex-wrap items-center justify-between gap-4 text-sm text-nordika-muted">
+    <span class="font-bold text-base text-nordika-dark tracking-tight">Nórdika</span>
+    <ul class="flex gap-6 list-none">
+      <li><a href="index.html#inicio" class="hover:text-nordika-dark transition-colors">Inicio</a></li>
+      <li><a href="index.html#productos" class="hover:text-nordika-dark transition-colors">Catálogo</a></li>
+      <li><a href="index.html#contacto" class="hover:text-nordika-dark transition-colors">Contacto</a></li>
+    </ul>
+    <p>© 2026 Nórdika. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    const products = {
+      'sillon-fjord': {
+        name:        'Sillón Fjord',
+        category:    'Sillones',
+        price:       '$89.990',
+        description: 'El Sillón Fjord encarna la esencia del diseño escandinavo: líneas limpias, materiales nobles y una comodidad que invita a quedarse. Su tapizado en tela beige y su estructura en roble macizo lo convierten en la pieza central perfecta para cualquier living.',
+        features: [
+          ' Estructura en roble macizo',
+          ' Tapizado en tela beige de alta resistencia',
+          ' Dimensiones: 80 × 85 × 90 cm (An × Pr × Al)',
+          ' Peso: 18 kg',
+          ' Armado incluido',
+          ' Disponible también en tela gris y verde oliva',
+        ]
+      },
+      'mesa-lund': {
+        name:        'Mesa Lund',
+        category:    'Mesas',
+        price:       '$124.990',
+        description: 'La Mesa Lund es el centro de reunión de tu hogar. Fabricada en madera de pino macizo con acabado natural, combina calidez y solidez. Su formato de 160 × 80 cm es ideal para familias de hasta 6 personas.',
+        features: [
+          ' Madera de pino macizo certificada',
+          ' Dimensiones: 160 × 80 cm (La × An)',
+          ' Capacidad para 6 personas',
+          ' Peso: 32 kg',
+          ' Acabado protector al agua incluido',
+          ' Disponible en acabado natural y wengué',
+        ]
+      },
+      'cama-birk': {
+        name:        'Cama Birk',
+        category:    'Camas',
+        price:       '$219.990',
+        description: 'La Cama Birk redefine el descanso con su cabecero minimalista de líneas rectas en madera de fresno. Su base ventilada favorece la circulación de aire y la durabilidad del colchón. Diseño atemporal para el dormitorio que siempre quisiste.',
+        features: [
+          ' Estructura en fresno macizo',
+          ' Medida: matrimonial (160 × 200 cm)',
+          ' Base de lamas de madera ventilada',
+          ' Peso: 45 kg',
+          ' Patas regulables en altura',
+          ' Disponible en fresno natural y roble oscuro',
+        ]
+      }
+    };
+
+    const params  = new URLSearchParams(window.location.search);
+    const id      = params.get('id');
+    const product = products[id];
+
+    if (product) {
+      document.title = `${product.name} — Nórdika`;
+      document.getElementById('breadcrumb-name').textContent = product.name;
+      document.getElementById('product-name').textContent        = product.name;
+      document.getElementById('product-category').textContent    = product.category;
+      document.getElementById('product-price').textContent       = product.price;
+      document.getElementById('product-description').textContent = product.description;
+
+      const ul = document.getElementById('product-features');
+      product.features.forEach(f => {
+        const li = document.createElement('li');
+        li.className = 'flex items-start gap-2';
+        li.textContent = f;
+        ul.appendChild(li);
+      });
+    } else {
+      document.getElementById('product-content').classList.add('hidden');
+      document.getElementById('not-found').classList.remove('hidden');
+    }
+  </script>
+
+</body>
+</html>
